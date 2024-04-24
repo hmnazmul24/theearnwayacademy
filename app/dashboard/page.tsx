@@ -42,7 +42,7 @@ export default function Dashboard() {
   return (
     <Fragment>
       {loading ? (
-        <Loading />
+        <Loading text="loading..." />
       ) : (
         <div className="flex min-h-screen w-full  m-auto flex-col bg-muted/40">
           <div className="flex flex-col sm:gap-4 sm:py-4 ">

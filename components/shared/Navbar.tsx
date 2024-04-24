@@ -19,6 +19,7 @@ import axios from "axios";
 import { useThemeContext } from "@/context/theme";
 import { StudentInfoType } from "@/types";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 const Navbar = () => {
   const router = useRouter();
@@ -50,9 +51,15 @@ const Navbar = () => {
             The earn way academy
           </span>
           <ul className="sm:flex items-center gap-4 text-[0.9rem] hidden ml-4">
-            <li className="main_color">Home</li>
-            <li className="main_color">About</li>
-            <li className="main_color">Contact Us</li>
+            <Link href={"/"}>
+              <li className="main_color">Home</li>
+            </Link>
+            <Link href={"#Footer"}>
+              <li className="main_color">About</li>
+            </Link>
+            <Link href={"#Footer"}>
+              <li className="main_color">Contact Us</li>
+            </Link>
           </ul>
         </div>
         {/* ham buger  */}
@@ -77,15 +84,37 @@ const Navbar = () => {
               </Button>
             </div> */}
             <div className="flex items-center flex-col gap-2 p-[20px]">
-              <Button
-                className="main_color rounded-[50px] "
-                variant={"outline"}
-              >
-                About Us
-              </Button>
-              <Button className="bg-slate-200 rounded-[50px] main_color">
-                Contact Us
-              </Button>
+              <DrawerClose>
+                <Button
+                  className="main_color rounded-[50px] "
+                  variant={"outline"}
+                  onClick={() => {
+                    setTimeout(() => {
+                      window.scrollTo({
+                        top: document.documentElement.scrollHeight,
+                        behavior: "smooth",
+                      });
+                    }, 500);
+                  }}
+                >
+                  About Us
+                </Button>
+              </DrawerClose>
+              <DrawerClose>
+                <Button
+                  onClick={() => {
+                    setTimeout(() => {
+                      window.scrollTo({
+                        top: document.documentElement.scrollHeight,
+                        behavior: "smooth",
+                      });
+                    }, 2000);
+                  }}
+                  className="bg-slate-200 rounded-[50px] main_color"
+                >
+                  Contact Us
+                </Button>
+              </DrawerClose>
             </div>
 
             <DrawerFooter>
@@ -101,15 +130,32 @@ const Navbar = () => {
         {/* ham icon  */}
         <div className=" items-center justify-center hidden sm:flex">
           <ul className="md:flex items-center justify-center gap-3 mr-8 hidden">
-            <li className="bg-slate-200 rounded-full p-2 main_color">
-              <TbBrandFacebook />
-            </li>
-            <li className="bg-slate-200 rounded-full p-2 main_color">
-              <TbBrandYoutube />
-            </li>
-            <li className="bg-slate-200 rounded-full p-2 main_color">
-              <RiTiktokLine />
-            </li>
+            <Link
+              href={"https://www.facebook.com/the.earn.way?mibextid=ZbWKwL"}
+              target="_blank"
+            >
+              <li className="bg-slate-200 cursor-pointer  rounded-full p-2 main_color">
+                <TbBrandFacebook />
+              </li>
+            </Link>
+            <Link
+              href={"https://www.youtube.com/@TheEarnWayAcademy"}
+              target="_blank"
+            >
+              <li className="bg-slate-200 cursor-pointer rounded-full p-2 main_color">
+                <TbBrandYoutube />
+              </li>
+            </Link>
+            <Link
+              href={
+                "https://www.tiktok.com/@the.earn.way.acad?_t=8i0ujqgKcRV&_r=1"
+              }
+              target="_blank"
+            >
+              <li className="bg-slate-200 cursor-pointer rounded-full p-2 main_color">
+                <RiTiktokLine />
+              </li>
+            </Link>
           </ul>
           {/* <Button className="main_color">sign in</Button>
           <Button className="bg-slate-200 rounded-[50px] main_color">

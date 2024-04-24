@@ -6,6 +6,7 @@ import { FaRegFilePowerpoint } from "react-icons/fa6";
 import { MdOutlineMarkEmailRead } from "react-icons/md";
 import { FaRegAddressCard } from "react-icons/fa";
 import { GrCertificate } from "react-icons/gr";
+import Link from "next/link";
 
 const Hero = () => {
   const skills = [
@@ -32,9 +33,11 @@ const Hero = () => {
             alt="office-logo"
             className=" w-[90%] md:w-[80%]"
           />
-          <Button className="main_bg_color p-6 rounded-[50px] text-[1.1rem] md:text-[1.3rem] shadow-sm shadow-[#f5d170] text-[white] md:mr-[70px] mb-10">
-            register now
-          </Button>
+          <Link href={"/course/placeorder"}>
+            <Button className="main_bg_color p-6 tracking-[2px] rounded-[50px] text-[1.1rem] md:text-[1.3rem] shadow-sm shadow-[#f5d170] text-[white] md:mr-[70px] mb-10">
+              Register Now
+            </Button>
+          </Link>
         </div>
         <div className=" w-full md:w-1/2 p-4">
           <p className="text-[1.1rem] md:text-[1.1rem]">
@@ -45,7 +48,10 @@ const Hero = () => {
           </p>
           <ul>
             {skills.map((item) => (
-              <li className="my-1  md:text-[0.9rem] text-[0.7rem] flex items-center justify-start gap-3">
+              <li
+                key={item.skill}
+                className="my-1  md:text-[0.9rem] text-[0.7rem] flex items-center justify-start gap-3"
+              >
                 <span style={{ color: item.color }}>{item.icon}</span>
                 <span>{item.skill}</span>
               </li>

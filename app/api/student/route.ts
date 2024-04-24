@@ -4,7 +4,9 @@ import Student from "@/lib/database/modals/student.modal";
 import { NextResponse } from "next/server";
 import { authenticate } from "@/lib/middlewares/auth";
 import { uploadImg } from "@/lib/middlewares/uploadImg";
-import { payment } from "@/lib/middlewares/Payment";
+import { get_token } from "@/lib/middlewares/get_token";
+import { makePayment } from "@/lib/middlewares/make_payment";
+import { PaymentInfoType } from "@/types";
 
 export const POST = async (request: Request) => {
   try {
@@ -94,36 +96,25 @@ export const POST = async (request: Request) => {
       documentImg,
     });
 
-    // Generate JWT token
-    const token = jwt.sign(
-      { email: newStudent.email },
-      process.env.SECRET_KEY as string,
-      { expiresIn: "7d" }
-    );
-
-    // Set cookie with JWT token
-    const cookieOptions = {
-      httpOnly: true, // Prevent client-side JavaScript access to the cookie
-      sameSite: "strict", // Restrict cookie to same site requests
-      maxAge: 7 * 24 * 60 * 60 * 1000, // Cookie expiration time in milliseconds (e.g., 7 days)
-      path: "/", // Restrict cookie to the root path
+    let payment_token = await get_token();
+    let paymentInfo: PaymentInfoType = {
+      name: firstName,
+      email,
+      state,
+      address: city,
+      phone: mobile,
+      given_token: payment_token,
+      student_id: newStudent._id,
     };
 
-    const cookie = `student_token=${token}; ${Object.entries(cookieOptions)
-      .map(([key, value]) => `${key}=${value}`)
-      .join("; ")}`;
+    let payment_url = await makePayment(paymentInfo);
 
-    const response = new NextResponse(
-      JSON.stringify({ message: "Student is created", student: newStudent }),
+    return new NextResponse(
+      JSON.stringify({ message: "Student is created", payment_url }),
       {
-        status: 201,
+        status: 200,
       }
     );
-
-    // Add cookie to response headers
-    response.headers.append("Set-Cookie", cookie);
-
-    return response;
   } catch (error) {
     return new NextResponse(
       JSON.stringify({

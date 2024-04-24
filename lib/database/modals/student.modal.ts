@@ -11,8 +11,11 @@ const StudentSchema = new Schema({
   password: { type: String, required: [true, "Password is required"] },
   mobile: { type: String, required: [true, "Mobile is required"] },
   gender: { type: String, required: [true, "Gender is required"] },
+
   profileImg: { type: String, required: [true, "Profile image is required"] },
   documentImg: { type: String, required: [true, "Document image is required"] },
+  status: { type: String, default: "unpaid" },
+  createdAt: { type: Date, default: Date.now() },
 });
 
 const Student =

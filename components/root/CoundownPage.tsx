@@ -60,7 +60,10 @@ const Coundownpage: React.FC = () => {
         </h1>
         <ul className="flex items-start md:translate-x-[-20px] flex-col gap-1">
           {details.map((item) => (
-            <li className="flex gap-3 items-center justify-center rounded-[50px] shadow-[#070707] shadow-sm bg-[#ffffffb8] md:p- p-2 px-4">
+            <li
+              key={item.title}
+              className="flex gap-3 items-center justify-center rounded-[50px] shadow-[#070707] shadow-sm bg-[#ffffffb8] md:p- p-2 px-4"
+            >
               <span style={{ color: "green" }}>{item.icon}</span>
               <span>{item.title}</span>
             </li>
@@ -74,7 +77,10 @@ const Coundownpage: React.FC = () => {
           </h1>
           <ul>
             {achieve.map((item) => (
-              <li className="my-1 flex items-center justify-start gap-3 text-[1.2rem] md:text-[1.5rem]">
+              <li
+                key={item.title}
+                className="my-1 flex items-center justify-start gap-3 text-[1.2rem] md:text-[1.5rem]"
+              >
                 <span style={{ color: item.color }}>{item.icon}</span>
                 <span>{item.title}</span>
               </li>

@@ -8,22 +8,39 @@ import { CiPhone } from "react-icons/ci";
 
 const Footer: React.FC = () => {
   return (
-    <div className="bg-gray-100">
+    <div className="bg-gray-100" id="Footer">
       <div className="md:w-[85%] py-10  sm:px-6 text-gray-800 md:flex justify-between mx-auto">
         <div className=" p-3 md:p-5 border-r md:w-[23%] ">
           <div className="text-sm uppercase text-[1.2rem] main_color  font-bold">
             <img src="/tew.png" className="h-[25px]" alt="" />
           </div>
           <ul className="flex items-center justify-start md:justify-start mt-6 gap-3 mr-8 ">
-            <li className="bg-slate-200 rounded-full p-2 main_color">
-              <TbBrandFacebook />
-            </li>
-            <li className="bg-slate-200 rounded-full p-2 main_color">
-              <TbBrandYoutube />
-            </li>
-            <li className="bg-slate-200 rounded-full p-2 main_color">
-              <RiTiktokLine />
-            </li>
+            <Link
+              href={"https://www.facebook.com/the.earn.way?mibextid=ZbWKwL"}
+              target="_blank"
+            >
+              <li className="bg-slate-200 cursor-pointer  rounded-full p-2 main_color">
+                <TbBrandFacebook />
+              </li>
+            </Link>
+            <Link
+              href={"https://www.youtube.com/@TheEarnWayAcademy"}
+              target="_blank"
+            >
+              <li className="bg-slate-200 cursor-pointer rounded-full p-2 main_color">
+                <TbBrandYoutube />
+              </li>
+            </Link>
+            <Link
+              href={
+                "https://www.tiktok.com/@the.earn.way.acad?_t=8i0ujqgKcRV&_r=1"
+              }
+              target="_blank"
+            >
+              <li className="bg-slate-200 cursor-pointer rounded-full p-2 main_color">
+                <RiTiktokLine />
+              </li>
+            </Link>
           </ul>
         </div>
         <div className="p-5 md:w-[50%]  md:px-10 border-r md:text-center">
