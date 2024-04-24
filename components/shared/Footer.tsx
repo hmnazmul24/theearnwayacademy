@@ -5,6 +5,7 @@ import { TbBrandYoutube } from "react-icons/tb";
 import { RiTiktokLine } from "react-icons/ri";
 import { CiLocationOn } from "react-icons/ci";
 import { CiPhone } from "react-icons/ci";
+import Image from "next/image";
 
 const Footer: React.FC = () => {
   return (
@@ -12,7 +13,7 @@ const Footer: React.FC = () => {
       <div className="md:w-[85%] py-10  sm:px-6 text-gray-800 md:flex justify-between mx-auto">
         <div className=" p-3 md:p-5 border-r md:w-[23%] ">
           <div className="text-sm uppercase text-[1.2rem] main_color  font-bold">
-            <img src="/tew.png" className="h-[25px]" alt="" />
+            <Image src="/tew.png" className="h-[25px]" alt="" />
           </div>
           <ul className="flex items-center justify-start md:justify-start mt-6 gap-3 mr-8 ">
             <Link

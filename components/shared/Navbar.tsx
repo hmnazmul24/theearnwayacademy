@@ -20,6 +20,7 @@ import { useThemeContext } from "@/context/theme";
 import { StudentInfoType } from "@/types";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 
 const Navbar = () => {
   const router = useRouter();
@@ -28,7 +29,7 @@ const Navbar = () => {
     let getInfo = async () => {
       try {
         let { data } = await axios.get("/api/student");
-        console.log(data);
+
         setMessage(data.message);
         setStudent(data.student);
       } catch (error) {
@@ -36,12 +37,12 @@ const Navbar = () => {
       }
     };
     getInfo();
-  }, []);
+  }, [setMessage, setStudent]);
   return (
     <div className="h-[70px] sticky top-0 left-0 z-50 md:h-[80px] bg-white border-b-[1px] border-b-slate-200">
       <div className="w-[93%] md:w-[90%]  m-auto flex items-center justify-between h-full">
         <div className="h-full flex items-center relative justify-center gap-6">
-          <img
+          <Image
             src={"/tew.png"}
             alt="main-logo"
             className="h-[40%] md:h-[42%]"

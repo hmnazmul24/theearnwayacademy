@@ -25,7 +25,10 @@ const Achievement = () => {
       </h1>
       <div className="flex items-center justify-evenly md:flex-row flex-col m-3 gap-4 md:m-0 ">
         {achieve.map((item) => (
-          <div className="w-full md:w-[30%] md:min-h-[300px] py-10 main_bg_color p-6 rounded-md flex_center flex-col gap-5">
+          <div
+            key={item.title}
+            className="w-full md:w-[30%] md:min-h-[300px] py-10 main_bg_color p-6 rounded-md flex_center flex-col gap-5"
+          >
             <div className="text-[3rem]">{item.icon}</div>
             <div>{item.title}</div>
           </div>

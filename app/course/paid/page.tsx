@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 import React from "react";
 import { FaDownload } from "react-icons/fa6";
-import { CiCircleList } from "react-icons/ci";
 
 const page = () => {
   const furtherInfo = [
@@ -15,12 +15,12 @@ const page = () => {
       <div className="mb-5">
         <h1 className="text-[1.5rem] py-3 border-b-[1px] block md:inline border-b-[#3f99ca6c]">
           <span className="text-[green] font-bold">Congratulation! </span> You
-          have bought Microsoft Office Live Courese"
+          have bought Microsoft Office Live Courese
         </h1>
       </div>
       <h1 className="my-3">Your Registration Card</h1>
       <div className="border-[1px] border-[#f5f5f5] rounded-md">
-        <img
+        <Image
           src="/user.png"
           alt="registation card"
           className="w-full md:w-[50%] border-[1px] border-[#13c1d8] rounded-md"

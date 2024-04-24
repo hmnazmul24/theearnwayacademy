@@ -7,6 +7,7 @@ import { MdOutlineMarkEmailRead } from "react-icons/md";
 import { FaRegAddressCard } from "react-icons/fa";
 import { GrCertificate } from "react-icons/gr";
 import Link from "next/link";
+import Image from "next/image";
 
 const Hero = () => {
   const skills = [
@@ -28,7 +29,7 @@ const Hero = () => {
       <div className="flex_center flex-col md:flex-row w-full">
         <div className=" w-full md:w-1/2 flex items-center md:items-end flex-col">
           {" "}
-          <img
+          <Image
             src="/office-logo.png"
             alt="office-logo"
             className=" w-[90%] md:w-[80%]"

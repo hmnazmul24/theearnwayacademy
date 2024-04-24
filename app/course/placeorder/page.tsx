@@ -16,6 +16,7 @@ import {
 import ProfileImg from "@/components/shared/ProfileImg";
 import toast from "react-hot-toast";
 import Loading from "@/components/Loading";
+import Image from "next/image";
 
 function PlaceOrderPage() {
   const [loading, setLoading] = useState<boolean>(false);
@@ -101,7 +102,7 @@ function PlaceOrderPage() {
   return (
     <Fragment>
       {loading ? (
-        <Loading text="processing..." />
+        <Loading text={"processing..."} />
       ) : (
         <div className="flex flex-col md:flex-row items-start md:items-start md:justify-center justify-start w-[95%] xl:w-[85%] m-auto">
           <div className="md:w-1/2 w-full flex items-center justify-center my-5">
@@ -218,7 +219,7 @@ function PlaceOrderPage() {
                     </>
                   ) : (
                     <>
-                      <img
+                      <Image
                         src={uploadDocument?.toString()}
                         className="w-full"
                         alt="image"
@@ -252,7 +253,7 @@ function PlaceOrderPage() {
                 <span className="text-[0.8rem] mt-6">
                   We accept any online payment method
                 </span>
-                <img
+                <Image
                   src={"/sslcommerz2.jpg"}
                   className="w-full py-4"
                   alt="paymentImage"

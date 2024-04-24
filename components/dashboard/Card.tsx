@@ -12,6 +12,7 @@ import {
 import { Separator } from "@/components/ui/separator";
 import { StudentInfoType } from "@/types";
 import { FaDownload } from "react-icons/fa6";
+import Image from "next/image";
 const DeatilsPage = ({
   selectedStudent: ss,
 }: {
@@ -57,7 +58,11 @@ const DeatilsPage = ({
             <CardHeader className="flex flex-row items-start bg-muted/50">
               <div className="grid gap-0.5">
                 <div className=" relative w-[90px] overflow-hidden  rounded-md mb-2 border-[1px] border-[#e0e0e0]">
-                  <img src={ss?.profileImg} className="w-full" alt="userImg" />
+                  <Image
+                    src={ss?.profileImg!}
+                    className="w-full"
+                    alt="userImg"
+                  />
                   <span
                     onClick={() => handleDownload("profile")}
                     className="absolute bottom-0 right-0 cursor-pointer bg-white  p-1 rounded-md"
@@ -134,8 +139,8 @@ const DeatilsPage = ({
                     Student SSC/HSC Registration Card
                   </h1>
                   <div className=" relative cursor-pointer w-[150px] overflow-hidden  rounded-md mb-2 border-[1px] border-[#e0e0e0]">
-                    <img
-                      src={ss?.documentImg}
+                    <Image
+                      src={ss?.documentImg!}
                       className="w-full"
                       alt="userImg"
                     />
@@ -152,7 +157,7 @@ const DeatilsPage = ({
                     Generated Registration Card
                   </h1>
                   <div className=" relative w-[150px] overflow-hidden  rounded-md mb-2 border-[1px] border-[#e0e0e0]">
-                    <img src="/user.png" className="w-full" alt="userImg" />
+                    <Image src="/user.png" className="w-full" alt="userImg" />
                     <span className="absolute bottom-0 right-0 bg-white  p-1 rounded-md">
                       <FaDownload />
                     </span>

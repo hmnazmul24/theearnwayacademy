@@ -1,5 +1,6 @@
 import React, { ChangeEvent, useRef, useState } from "react";
 import { Button } from "../ui/button";
+import Image from "next/image";
 
 interface ProfileImgProps {
   uploadImg: string | ArrayBuffer | null;
@@ -68,7 +69,7 @@ const ProfileImg = ({ uploadImg, setUploadImg }: ProfileImgProps) => {
           </>
         ) : (
           <>
-            <img src={uploadImg?.toString()} className="w-full" alt="image" />
+            <Image src={uploadImg?.toString()} className="w-full" alt="image" />
 
             <Button
               variant={"outline"}
