@@ -22,10 +22,15 @@ import { Input } from "../ui/input";
 import { Search } from "lucide-react";
 import PaginationPage from "./Pagination";
 import { StudentInfoType } from "@/types";
+import { Dispatch, SetStateAction } from "react";
 const StudentList = ({
   students,
+  open_id,
+  setOpen,
 }: {
   students: StudentInfoType[] | undefined;
+  open_id: string;
+  setOpen: Dispatch<SetStateAction<StudentInfoType | undefined>>;
 }) => {
   return (
     <Tabs defaultValue="week">
@@ -87,8 +92,13 @@ const StudentList = ({
                         {student.mobile}
                       </TableCell>
                       <TableCell className="text-right pr-0">
-                        <Button variant={"outline"}>
-                          <span className="hidden md:block">Open</span>
+                        <Button
+                          variant={"outline"}
+                          onClick={() => setOpen(student)}
+                        >
+                          <span className="hidden md:block">
+                            {student._id === open_id ? "Opened" : "Open"}
+                          </span>
                           <CgArrowsExpandUpRight className="md:ml-4" />
                         </Button>
                       </TableCell>

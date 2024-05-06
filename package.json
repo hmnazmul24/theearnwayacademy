@@ -27,6 +27,7 @@
     "cloudinary": "^2.1.0",
     "clsx": "^2.1.0",
     "country-state-city": "^3.2.1",
+    "html-to-image": "^1.11.11",
     "jsonwebtoken": "^9.0.2",
     "lucide-react": "^0.370.0",
     "mongoose": "^8.3.2",

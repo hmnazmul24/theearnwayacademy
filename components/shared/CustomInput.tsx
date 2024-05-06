@@ -25,7 +25,6 @@ const CustomInput = ({
   return (
     <div className="relative w-full">
       <label
-        onClick={() => setIsFocused(true)}
         className={`${
           isFocused ? "top-[-11px] text-[0.8rem] " : "top-2"
         } transition-all absolute left-2 rounded-md px-2 z-[1] bg-[white]`}

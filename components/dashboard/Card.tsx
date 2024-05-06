@@ -1,3 +1,5 @@
+"use client";
+
 import { Copy, CreditCard } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
@@ -62,6 +64,8 @@ const DeatilsPage = ({
                     src={ss?.profileImg!}
                     className="w-full"
                     alt="userImg"
+                    height={200}
+                    width={200}
                   />
                   <span
                     onClick={() => handleDownload("profile")}
@@ -143,6 +147,8 @@ const DeatilsPage = ({
                       src={ss?.documentImg!}
                       className="w-full"
                       alt="userImg"
+                      height={200}
+                      width={200}
                     />
                     <span
                       onClick={() => handleDownload("given_Reg")}
@@ -154,14 +160,11 @@ const DeatilsPage = ({
                 </div>
                 <div>
                   <h1 className="text-[0.9rem] my-4">
-                    Generated Registration Card
-                  </h1>
-                  <div className=" relative w-[150px] overflow-hidden  rounded-md mb-2 border-[1px] border-[#e0e0e0]">
-                    <Image src="/user.png" className="w-full" alt="userImg" />
-                    <span className="absolute bottom-0 right-0 bg-white  p-1 rounded-md">
+                    Generated Registration Card{" "}
+                    <Button className="bg-[#e7e7e7] rounded-md">
                       <FaDownload />
-                    </span>
-                  </div>
+                    </Button>
+                  </h1>
                 </div>
               </div>
             </CardFooter>

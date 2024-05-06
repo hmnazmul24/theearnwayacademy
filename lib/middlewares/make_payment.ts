@@ -1,6 +1,8 @@
 import { PaymentInfoType } from "@/types";
 import axios from "axios";
 
+const order_id = Math.round(Number(Math.random) * 100000000).toString();
+
 export const makePayment = async ({
   name,
   email,
@@ -15,11 +17,12 @@ export const makePayment = async ({
     const data = {
       prefix: "sp",
       token: given_token,
-      return_url: process.env.SP_RETURN_URL,
+      return_url: `${process.env.SP_SUCCESS_URL}test/success`,
+      // return_url: `${process.env.SP_SUCCESS_URL}course/paid/${student_id}`,
       cancel_url: process.env.SP_CANCEL_URL,
       store_id: "1",
       amount: "1250",
-      order_id: "sp315689",
+      order_id,
       currency: "BDT",
       customer_name: name,
       customer_address: address,
@@ -56,6 +59,7 @@ export const makePayment = async ({
         "Content-Type": "multipart/form-data",
       },
     });
+
     return response.data.checkout_url;
   } catch (error) {
     console.error("Error:", error);

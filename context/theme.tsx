@@ -1,6 +1,12 @@
 "use client";
 
-import { StudentInfoType } from "@/types";
+import {
+  BranchDocumentInfo,
+  BranchInfoType,
+  BranchPersonInfoType,
+  MoreBranchInfoType,
+  StudentInfoType,
+} from "@/types";
 import { createContext, useContext, useState, ReactNode } from "react";
 
 interface ThemeContextType {
@@ -8,6 +14,14 @@ interface ThemeContextType {
   setMessage: (t: string) => void;
   student: StudentInfoType;
   setStudent: (s: StudentInfoType) => void;
+  branch: BranchInfoType;
+  ChangeBranchInfo: (a: string, a2: string) => void;
+  personal: BranchPersonInfoType;
+  ChangePersonalBranchInfo: (a: string, a2: string) => void;
+  moreBranchInfo: MoreBranchInfoType;
+  ChangeMoreBranchInfo: (a: string, a2: string) => void;
+  branchDocument: BranchDocumentInfo;
+  ChangeBranchDocument: (a: string, a2: string) => void;
 }
 
 const Context = createContext<ThemeContextType | undefined>(undefined);
@@ -27,8 +41,63 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     profileImg: "",
     documentImg: "",
   });
+  // branch info
+  const [branch, setBranch] = useState<BranchInfoType>({
+    name: "",
+    phone: "",
+    email: "",
+    computer: "",
+  });
+  const ChangeBranchInfo = (value: string, name: string) => {
+    setBranch((pre) => ({ ...pre, [name]: value }));
+  };
 
-  const value: ThemeContextType = { message, setMessage, student, setStudent };
+  // branch personal info
+  const [personal, setPersonal] = useState<BranchPersonInfoType>({
+    name: "",
+    father: "",
+    mother: "",
+    gender: "",
+  });
+  const ChangePersonalBranchInfo = (value: string, name: string) => {
+    setPersonal((pre) => ({ ...pre, [name]: value }));
+  };
+  // more contact info
+  const [moreBranchInfo, setMoreBranchInfo] = useState<MoreBranchInfoType>({
+    address: "",
+    district: "",
+    mobile: "",
+    name: "",
+    postcode: "",
+    upozila: "",
+  });
+  const ChangeMoreBranchInfo = (value: string, name: string) => {
+    setMoreBranchInfo((pre) => ({ ...pre, [name]: value }));
+  };
+  // document contact info
+  const [branchDocument, setBranchDocument] = useState<BranchDocumentInfo>({
+    id_card_img: "",
+    personal_img: "",
+    trade_licence_img: "",
+  });
+  const ChangeBranchDocument = (value: string, name: string) => {
+    setBranchDocument((pre) => ({ ...pre, [name]: value }));
+  };
+
+  const value: ThemeContextType = {
+    message,
+    setMessage,
+    student,
+    setStudent,
+    branch,
+    ChangeBranchInfo,
+    personal,
+    ChangePersonalBranchInfo,
+    moreBranchInfo,
+    ChangeMoreBranchInfo,
+    branchDocument,
+    ChangeBranchDocument,
+  };
 
   return <Context.Provider value={value}>{children}</Context.Provider>;
 }

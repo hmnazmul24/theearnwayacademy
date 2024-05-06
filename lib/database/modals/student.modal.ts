@@ -9,8 +9,13 @@ const StudentSchema = new Schema({
   city: { type: String, required: [true, "City is required"] },
   email: { type: String, required: [true, "Email is required"], unique: true },
   password: { type: String, required: [true, "Password is required"] },
-  mobile: { type: String, required: [true, "Mobile is required"] },
+  mobile: {
+    type: String,
+    required: [true, "Mobile is required"],
+    unique: true,
+  },
   gender: { type: String, required: [true, "Gender is required"] },
+  registration_no: { type: Number },
 
   profileImg: { type: String, required: [true, "Profile image is required"] },
   documentImg: { type: String, required: [true, "Document image is required"] },

@@ -6,6 +6,8 @@ import { TbBrandFacebook } from "react-icons/tb";
 import { TbBrandYoutube } from "react-icons/tb";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { RiTiktokLine } from "react-icons/ri";
+import { AiOutlineLogin } from "react-icons/ai";
+import { FaChevronDown } from "react-icons/fa6";
 import {
   Drawer,
   DrawerClose,
@@ -16,89 +18,76 @@ import {
   DrawerTrigger,
 } from "@/components/ui/drawer";
 import axios from "axios";
-import { useThemeContext } from "@/context/theme";
-import { StudentInfoType } from "@/types";
+// import { useThemeContext } from "@/context/theme";
+// import { StudentInfoType } from "@/types";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 
 const Navbar = () => {
   const router = useRouter();
-  const { setStudent, setMessage } = useThemeContext();
-  useEffect(() => {
-    let getInfo = async () => {
-      try {
-        let { data } = await axios.get("/api/student");
+  // const { setStudent, setMessage } = useThemeContext();
+  // useEffect(() => {
+  //   let getInfo = async () => {
+  //     try {
+  //       let { data } = await axios.get("/api/student");
 
-        setMessage(data.message);
-        setStudent(data.student);
-      } catch (error) {
-        console.log("error", error);
-      }
-    };
-    getInfo();
-  }, [setMessage, setStudent]);
+  //       setMessage(data.message);
+  //       setStudent(data.student);
+  //     } catch (error) {
+  //       console.log("error", error);
+  //     }
+  //   };
+  //   getInfo();
+  // }, [setMessage, setStudent]);
   return (
-    <div className="h-[70px] sticky top-0 left-0 z-50 md:h-[80px] bg-white border-b-[1px] border-b-slate-200">
+    <div className="h-[70px] sticky top-0 left-0 z-50 md:h-[80px] main_bg_color border-b-[1px] border-b-[#1c95a7]">
       <div className="w-[93%] md:w-[90%]  m-auto flex items-center justify-between h-full">
         <div className="h-full flex items-center relative justify-center gap-6">
           <Image
-            src={"/tew.png"}
+            src="/tew-logo.png"
             alt="main-logo"
-            className="h-[40%] md:h-[42%]"
+            width={100}
+            height={200}
+            className="h-[65%] md:h-[60%] main_logo"
             onClick={() => router.push("/", { scroll: false })}
           />
-          <span className="text-[0.8rem] absolute bottom-[3px] w-[200px] left-[3px]">
+          <span className="text-[0.7rem] font-bold  italic absolute bottom-[5px] m:bottom-[10px] w-[200px] left-[40px]">
             The earn way academy
           </span>
-          <ul className="sm:flex items-center gap-4 text-[0.9rem] hidden ml-4">
-            <Link href={"/"}>
-              <li className="main_color">Home</li>
-            </Link>
-            <Link href={"#Footer"}>
-              <li className="main_color">About</li>
-            </Link>
-            <Link href={"#Footer"}>
-              <li className="main_color">Contact Us</li>
-            </Link>
-          </ul>
         </div>
+        <ul className="sm:flex font-bold items-center gap-6 text-[0.9rem] hidden ml-4">
+          <Link href={"/"}>
+            <li className="">Home</li>
+          </Link>
+
+          <Link href={"#footer"}>
+            <li className="">Branch Login</li>
+          </Link>
+          <Link href={"#footer"}>
+            <li className="">Contact Us</li>
+          </Link>
+        </ul>
         {/* ham buger  */}
         <Drawer>
-          <DrawerTrigger className="sm:hidden bg-slate-200 rounded-full main_color mr-2 p-2">
-            <RxHamburgerMenu className="m-[6px] text-[1.2rem]" />
+          <DrawerTrigger
+            className="sm:hidden  rounded-full text-[#ffad32] translate-x-1 p-2 "
+            style={{ filter: "drop-shadow(1px 1px 1px black)" }}
+          >
+            <RxHamburgerMenu className=" text-[1.7rem]" />
           </DrawerTrigger>
-          <DrawerContent className="bg-[white] rounded-[0]">
+          <DrawerContent className="main_bg_color outline-none border-none rounded-[0]">
             <DrawerHeader>
               <DrawerTitle>The earn way cademy</DrawerTitle>
             </DrawerHeader>
 
-            {/* <div className="flex items-center flex-col gap-2 p-[20px]">
-              <Button
-                className="main_color rounded-[50px] "
-                variant={"outline"}
-              >
-                sign in
-              </Button>
-              <Button className="bg-slate-200 rounded-[50px] main_color">
-                register
-              </Button>
-            </div> */}
             <div className="flex items-center flex-col gap-2 p-[20px]">
               <DrawerClose>
                 <Button
-                  className="main_color rounded-[50px] "
-                  variant={"outline"}
-                  onClick={() => {
-                    setTimeout(() => {
-                      window.scrollTo({
-                        top: document.documentElement.scrollHeight,
-                        behavior: "smooth",
-                      });
-                    }, 500);
-                  }}
+                  className="icon_bg rounded-[50px] "
+                  onClick={() => router.push("/branch-login")}
                 >
-                  About Us
+                  Branch Login
                 </Button>
               </DrawerClose>
               <DrawerClose>
@@ -111,7 +100,7 @@ const Navbar = () => {
                       });
                     }, 2000);
                   }}
-                  className="bg-slate-200 rounded-[50px] main_color"
+                  className=" rounded-[50px] "
                 >
                   Contact Us
                 </Button>
@@ -120,8 +109,8 @@ const Navbar = () => {
 
             <DrawerFooter>
               <DrawerClose>
-                <Button className="w-full rounded-[50px] text-[tomato]">
-                  Cancel
+                <Button className="w-full rounded-[50px] text-[#1b1b1b]">
+                  <FaChevronDown className="text-[1.3rem]" />
                 </Button>
               </DrawerClose>
             </DrawerFooter>
@@ -130,12 +119,12 @@ const Navbar = () => {
 
         {/* ham icon  */}
         <div className=" items-center justify-center hidden sm:flex">
-          <ul className="md:flex items-center justify-center gap-3 mr-8 hidden">
+          <ul className="md:flex items-center justify-center gap-3 mr-2 hidden">
             <Link
               href={"https://www.facebook.com/the.earn.way?mibextid=ZbWKwL"}
               target="_blank"
             >
-              <li className="bg-slate-200 cursor-pointer  rounded-full p-2 main_color">
+              <li className="icon_bg cursor-pointer  rounded-full p-2 icon_color">
                 <TbBrandFacebook />
               </li>
             </Link>
@@ -143,7 +132,7 @@ const Navbar = () => {
               href={"https://www.youtube.com/@TheEarnWayAcademy"}
               target="_blank"
             >
-              <li className="bg-slate-200 cursor-pointer rounded-full p-2 main_color">
+              <li className="icon_bg cursor-pointer rounded-full p-2 icon_color">
                 <TbBrandYoutube />
               </li>
             </Link>
@@ -153,15 +142,11 @@ const Navbar = () => {
               }
               target="_blank"
             >
-              <li className="bg-slate-200 cursor-pointer rounded-full p-2 main_color">
+              <li className="icon_bg cursor-pointer rounded-full p-2 icon_color">
                 <RiTiktokLine />
               </li>
             </Link>
           </ul>
-          {/* <Button className="main_color">sign in</Button>
-          <Button className="bg-slate-200 rounded-[50px] main_color">
-            register
-          </Button> */}
         </div>
       </div>
     </div>

@@ -9,11 +9,17 @@ import Image from "next/image";
 
 const Footer: React.FC = () => {
   return (
-    <div className="bg-gray-100" id="Footer">
+    <div className="bg-gray-100">
       <div className="md:w-[85%] py-10  sm:px-6 text-gray-800 md:flex justify-between mx-auto">
         <div className=" p-3 md:p-5 border-r md:w-[23%] ">
           <div className="text-sm uppercase text-[1.2rem] main_color  font-bold">
-            <Image src="/tew.png" className="h-[25px]" alt="" />
+            <Image
+              src="/tew.png"
+              width={90}
+              height={300}
+              className="h-[25px]"
+              alt=""
+            />
           </div>
           <ul className="flex items-center justify-start md:justify-start mt-6 gap-3 mr-8 ">
             <Link
@@ -58,7 +64,10 @@ const Footer: React.FC = () => {
             className="mt-6
           "
           >
-            <li className="my-2 flex_center text-[0.9rem] justify-start">
+            <li
+              className="my-2 flex_center text-[0.9rem] justify-start"
+              id="Footer"
+            >
               <span className="mr-2">
                 <CiLocationOn />
               </span>

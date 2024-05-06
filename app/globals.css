@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Jacquard+12+Charted&family=Quicksand:wght@300..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@100..800&family=Quicksand:wght@300..700&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -7,6 +7,10 @@
 * {
   font-family: "Quicksand", sans-serif;
   scroll-behavior: smooth;
+}
+
+.bangla_font {
+  font-family: "Anek Bangla", sans-serif !important;
 }
 
 @layer base {
@@ -72,7 +76,9 @@
     --ring: 212.7 26.8% 83.9%;
   }
 }
-
+body {
+  background-color: rgb(233, 233, 233);
+}
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
@@ -89,17 +95,47 @@ input[type="number"]::-webkit-outer-spin-button {
 /* custom css class  */
 
 @layer base {
-  .main_color {
-    @apply text-[#1d7c9c];
-  }
   .main_border {
-    @apply border-[1px] border-[#1d7c9c84];
+    @apply border-[1px] border-[#172e6f];
   }
 
   .main_bg_color {
-    @apply bg-[#1d7c9c];
+    @apply bg-[#2792b5];
   }
+  .footer_bg_color {
+    @apply bg-[#2792b58f];
+  }
+
   .flex_center {
     @apply flex items-center justify-center;
   }
+}
+
+.main_logo {
+  filter: drop-shadow(1px 1px 1px rgb(0, 0, 0));
+}
+.icon_bg {
+  @apply bg-[#34e1ff];
+}
+.icon_color {
+  @apply text-[#000000];
+}
+.branch_heading {
+  @apply font-bold my-2 p-2 text-[#154557];
+}
+
+#hero_box {
+  background-image: linear-gradient(#2792b5, white);
+}
+#owner {
+  background-image: linear-gradient(rgb(212 233 245), white);
+}
+#approve {
+  background-image: linear-gradient(white, #2792b5);
+}
+#card_text_box {
+  background-image: linear-gradient(white, rgba(0, 0, 0, 0.534));
+}
+.branchInfoGredientBg {
+  background-image: linear-gradient(#78d5f4, white);
 }

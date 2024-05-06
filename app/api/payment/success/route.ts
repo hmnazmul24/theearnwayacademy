@@ -2,11 +2,16 @@ import Student from "@/lib/database/modals/student.modal";
 import { NextResponse } from "next/server";
 import jwt from "jsonwebtoken";
 
-export async function GET(request: Request) {
+export async function POST(request: Request) {
   const { searchParams } = new URL(request.url);
   const id = searchParams.get("id");
   let student = await Student.findByIdAndUpdate(id, { status: "paid" });
 
+  if (!student) {
+    return new NextResponse(JSON.stringify({ message: "Student not found" }), {
+      status: 201,
+    });
+  }
   // Generate JWT token
   const token = jwt.sign(
     { email: student.email },
@@ -27,11 +32,17 @@ export async function GET(request: Request) {
     .join("; ")}`;
 
   const response = new NextResponse(
-    JSON.stringify({ message: "Student is created", student: student }),
+    JSON.stringify({
+      message: "Student is paid successfully",
+      student: student,
+      success: true,
+    }),
     {
       status: 201,
     }
   );
+
+  console.log(response);
 
   // Add cookie to response headers
   response.headers.append("Set-Cookie", cookie);

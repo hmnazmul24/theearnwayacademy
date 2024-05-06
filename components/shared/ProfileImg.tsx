@@ -69,7 +69,13 @@ const ProfileImg = ({ uploadImg, setUploadImg }: ProfileImgProps) => {
           </>
         ) : (
           <>
-            <Image src={uploadImg?.toString()} className="w-full" alt="image" />
+            <Image
+              src={uploadImg?.toString()}
+              height={200}
+              width={200}
+              className="w-full"
+              alt="image"
+            />
 
             <Button
               variant={"outline"}

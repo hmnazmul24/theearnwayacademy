@@ -1,19 +1,35 @@
-export async function GET(request: Request) {
-  let number = 2;
-  if (number !== 0) {
-    return new Response(JSON.stringify({ redirectTo: "/dashboard" }), {
-      status: 307,
-      headers: {
-        "Content-Type": "application/json",
-        Location: "/dashboard",
-      },
-    });
-  }
+import { get_token } from "@/lib/middlewares/get_token";
+import { makePayment } from "@/lib/middlewares/make_payment";
+import { NextResponse } from "next/server";
 
-  return new Response(JSON.stringify({ message: "working" }), {
-    status: 200,
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
-}
+export const GET = async () => {
+  try {
+    const token = await get_token();
+
+    const url = await makePayment({
+      name: "sladf",
+      email: "email@gmail.com",
+      address: "slad",
+      given_token: token,
+      phone: "sldfk",
+      state: "sdlfk",
+      student_id: "studentId",
+    });
+    return new NextResponse(
+      JSON.stringify({ message: "Please register", url }),
+      {
+        status: 200,
+      }
+    );
+  } catch (error) {
+    return new NextResponse(
+      JSON.stringify({
+        message: "Error processing request",
+        error: error,
+      }),
+      {
+        status: 500,
+      }
+    );
+  }
+};

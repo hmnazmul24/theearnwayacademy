@@ -78,7 +78,6 @@ function PlaceOrderPage() {
   const handleSubmit = async () => {
     studentInfo.profileImg = uploadImg?.toString() as string;
     studentInfo.documentImg = uploadDocument?.toString() as string;
-    console.log(studentInfo);
 
     try {
       setLoading(true);
@@ -86,6 +85,8 @@ function PlaceOrderPage() {
         "/api/student",
         JSON.stringify(studentInfo)
       );
+      console.log("data", data);
+
       setLoading(false);
       window.open(data.payment_url, "_self");
     } catch (error) {
@@ -223,6 +224,8 @@ function PlaceOrderPage() {
                         src={uploadDocument?.toString()}
                         className="w-full"
                         alt="image"
+                        height={200}
+                        width={200}
                       />
 
                       <Button
@@ -255,6 +258,8 @@ function PlaceOrderPage() {
                 </span>
                 <Image
                   src={"/sslcommerz2.jpg"}
+                  height={200}
+                  width={200}
                   className="w-full py-4"
                   alt="paymentImage"
                 />

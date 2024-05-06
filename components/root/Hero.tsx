@@ -31,6 +31,8 @@ const Hero = () => {
           {" "}
           <Image
             src="/office-logo.png"
+            width={800}
+            height={800}
             alt="office-logo"
             className=" w-[90%] md:w-[80%]"
           />

@@ -1,4 +1,3 @@
-import jwt from "jsonwebtoken";
 import connect_db from "@/lib/database/db";
 import Student from "@/lib/database/modals/student.modal";
 import { NextResponse } from "next/server";
@@ -23,6 +22,27 @@ export const POST = async (request: Request) => {
       profileImg,
       documentImg,
     } = await request.json();
+
+    // test...........
+
+    // let payment_token_test = await get_token();
+    // let paymentInfo_test: PaymentInfoType = {
+    //   name: "firstName",
+    //   email: "email@gmail.com",
+    //   state: "lakdfa",
+    //   address: "city",
+    //   phone: "mobile",
+    //   given_token: payment_token_test,
+    //   student_id: "asdfa",
+    // };
+    // console.log(paymentInfo_test);
+    // console.log(payment_token_test);
+
+    // let payment_url_test = await makePayment(paymentInfo_test);
+    // console.log(payment_url_test);
+
+    // return;
+    // test...........
 
     // Validation
     if (
@@ -82,7 +102,7 @@ export const POST = async (request: Request) => {
     // after success
     profileImg = (await uploadImg(profileImg)).secure_url;
     documentImg = (await uploadImg(documentImg)).secure_url;
-    const newStudent = await Student.create({
+    let newStudent = await Student.create({
       firstName,
       lastName,
       country,
@@ -94,9 +114,11 @@ export const POST = async (request: Request) => {
       password,
       profileImg,
       documentImg,
+      registration_no: Math.round(Math.random() * 10000000000),
     });
 
     let payment_token = await get_token();
+
     let paymentInfo: PaymentInfoType = {
       name: firstName,
       email,

@@ -17,7 +17,7 @@ import axios from "axios";
 import { Fragment, useEffect, useState } from "react";
 
 export default function Dashboard() {
-  let [students, setStudents] = useState<StudentInfoType[]>();
+  let [students, setStudents] = useState<StudentInfoType[]>([]);
   let [selectedStudent, setSelectedStudent] = useState<StudentInfoType>();
   let [loading, setLoading] = useState<boolean>(false);
 
@@ -26,9 +26,9 @@ export default function Dashboard() {
       try {
         setLoading(true);
         let { data } = await axios.get("/api/admin");
-        setLoading(false);
         setStudents(data.students);
         setSelectedStudent(data.students[0]);
+        setLoading(false);
       } catch (error) {
         console.log(error);
         setLoading(false);
@@ -36,8 +36,6 @@ export default function Dashboard() {
     };
     getStudents();
   }, []);
-
-  console.log(students);
 
   return (
     <Fragment>
@@ -90,7 +88,11 @@ export default function Dashboard() {
                     </CardFooter>
                   </Card>
                 </div>
-                <StudentList students={students} />
+                <StudentList
+                  students={students}
+                  setOpen={setSelectedStudent}
+                  open_id={selectedStudent?._id.toString()!}
+                />
               </div>
               <DeatilsPage selectedStudent={selectedStudent} />
             </main>

@@ -1,7 +1,10 @@
+"use client";
+
+import RegistrationCard from "@/components/shared/RegistrationCard";
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
 import React from "react";
 import { FaDownload } from "react-icons/fa6";
+import * as htmlToImage from "html-to-image";
 
 const page = () => {
   const furtherInfo = [
@@ -10,6 +13,19 @@ const page = () => {
     { title: "You will click the link and landed the live class." },
     { title: "You will ask question during live class." },
   ];
+
+  const downloadImg = () => {
+    htmlToImage
+      .toJpeg(document.getElementById("downloadImg") as HTMLDivElement, {
+        quality: 0.95,
+      })
+      .then(function (dataUrl) {
+        var link = document.createElement("a");
+        link.download = "my-image-name.jpeg";
+        link.href = dataUrl;
+        link.click();
+      });
+  };
   return (
     <div className="w-full  p-4 md:w-[80%] m-auto">
       <div className="mb-5">
@@ -20,13 +36,13 @@ const page = () => {
       </div>
       <h1 className="my-3">Your Registration Card</h1>
       <div className="border-[1px] border-[#f5f5f5] rounded-md">
-        <Image
-          src="/user.png"
-          alt="registation card"
-          className="w-full md:w-[50%] border-[1px] border-[#13c1d8] rounded-md"
-        />
+        <RegistrationCard />
+
         <div className="flex_center justify-start">
-          <Button className="rounded-md my-2  bg-green-700 text-white py-2 px-4 ">
+          <Button
+            className="rounded-md my-2  bg-green-700 text-white py-2 px-4 "
+            onClick={downloadImg}
+          >
             Download <FaDownload className="ml-3" />
           </Button>
         </div>

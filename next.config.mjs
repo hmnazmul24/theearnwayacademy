@@ -1,4 +1,12 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
 
-export default nextConfig;
+const NextConfig = {
+  images: {
+    remotePatterns: [{ protocol: "https", hostname: "res.cloudinary.com" }],
+  },
+  async redirects() {
+    return [{ source: "/api/test", destination: "/", permanent: false }];
+  },
+};
+
+export default NextConfig;

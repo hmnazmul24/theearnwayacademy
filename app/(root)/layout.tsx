@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import "./globals.css";
+import "../globals.css";
 
 import { Inter as FontSans } from "next/font/google";
 
@@ -8,6 +8,7 @@ import Navbar from "@/components/shared/Navbar";
 import Footer from "@/components/shared/Footer";
 import { Toaster } from "react-hot-toast";
 import { ThemeProvider } from "@/context/theme";
+import MainFooter from "@/components/shared/MainFooter";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -35,7 +36,7 @@ export default function RootLayout({
         <ThemeProvider>
           <Navbar />
           {children}
-          <Footer />
+          <MainFooter />
           <Toaster />
         </ThemeProvider>
       </body>
