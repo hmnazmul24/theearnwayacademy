@@ -45,7 +45,7 @@ const BranchSelectInput = ({ name }: { name: string }) => {
           <SelectContent className="bg-[white]">
             {BDDistric.map((item) => (
               <SelectItem key={item.id} value={item.name}>
-                {item.name}- {item.bn_name}
+                {item.name}- <span className="bangla_font">{item.bn_name}</span>
               </SelectItem>
             ))}
           </SelectContent>
@@ -58,7 +58,7 @@ const BranchSelectInput = ({ name }: { name: string }) => {
           <SelectContent className="bg-[white]">
             {upozila?.map((item) => (
               <SelectItem key={item.id} value={item.name}>
-                {item.name}- {item.bn_name}
+                {item.name}- <span className="bangla_font">{item.bn_name}</span>
               </SelectItem>
             ))}
           </SelectContent>
