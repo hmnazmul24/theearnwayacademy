@@ -1,9 +1,9 @@
 "use client";
 
-import Approve from "@/components/home/Approve";
-import Courses from "@/components/home/Courses";
-import Hero from "@/components/home/Hero";
-import OwnderInfo from "@/components/home/OwnderInfo";
+import Approve from "@/components/branch-home/Approve";
+import Courses from "@/components/branch-home/Courses";
+import Hero from "@/components/branch-home/Hero";
+import OwnderInfo from "@/components/branch-home/OwnderInfo";
 
 const Home = () => {
   return (
