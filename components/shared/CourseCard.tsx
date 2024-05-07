@@ -16,9 +16,6 @@ const CourseCard = ({ item }: { item: coursesArrType }) => {
         className="absolute bottom-0 w-full h-[80px] rounded-md "
         id="card_text_box"
       >
-        {/* <div className="bg-[#00737c]  rounded-md translate-y-[40px] p-2">
-          this is working
-        </div> */}
         <div className="text-[white] font-bold text-center translate-y-[50px]">
           {item.course}
         </div>
