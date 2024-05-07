@@ -36,7 +36,7 @@ const page = () => {
       </div>
       <h1 className="my-3">Your Registration Card</h1>
       <div className="border-[1px] border-[#f5f5f5] rounded-md">
-        <RegistrationCard />
+        {/* <RegistrationCard /> */}
 
         <div className="flex_center justify-start">
           <Button
