@@ -65,18 +65,18 @@ const BranchApply = () => {
           </h1>
           <div className="w-full pb-11">
             <div className="flex items-center flex-col md:flex-row justify-center">
-              <div className="w-full md:w-1/2 p-3 m-2 branchInfoGredientBg min-h-[200px] rounded-md">
+              <div className="w-full md:w-1/2 p-3 md:m-2 branchInfoGredientBg min-h-[200px] rounded-md">
                 <PersonalInfo />
               </div>
-              <div className="w-full md:w-1/2 p-3 m-2 branchInfoGredientBg min-h-[200px] rounded-md">
+              <div className="w-full md:w-1/2 p-3 md:m-2 branchInfoGredientBg min-h-[200px] rounded-md">
                 <BranchInfo />
               </div>
             </div>
             <div className="flex items-start flex-col md:flex-row justify-start">
-              <div className="w-full md:w-1/2 p-3 m-2 branchInfoGredientBg min-h-[200px] rounded-md">
+              <div className="w-full md:w-1/2 p-3 md:m-2 branchInfoGredientBg min-h-[200px] rounded-md">
                 <MoreInfo />
               </div>
-              <div className="w-full md:w-1/2 p-3 m-2 branchInfoGredientBg min-h-[200px] rounded-md">
+              <div className="w-full md:w-1/2 p-3 md:m-2 branchInfoGredientBg min-h-[200px] rounded-md">
                 <Document />
               </div>
             </div>
