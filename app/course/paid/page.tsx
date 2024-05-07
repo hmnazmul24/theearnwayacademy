@@ -1,6 +1,6 @@
 "use client";
 
-import RegistrationCard from "@/components/shared/RegistrationCard";
+// import RegistrationCard from "@/components/shared/RegistrationCard";
 import { Button } from "@/components/ui/button";
 import React from "react";
 import { FaDownload } from "react-icons/fa6";
