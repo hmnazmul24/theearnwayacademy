@@ -4,7 +4,7 @@ import { CiLocationOn, CiPhone } from "react-icons/ci";
 import { RiTiktokLine } from "react-icons/ri";
 import { TbBrandFacebook, TbBrandYoutube } from "react-icons/tb";
 import FooterHeading from "./FooterHeading";
-import InfinityImageSlider from "./SlideImg";
+import Image from "next/image";
 
 const MainFooter = () => {
   return (
@@ -95,7 +95,7 @@ const MainFooter = () => {
         </div>
         <div className="md:mx-[5%] mt-10 flex flex-col md:flex-row items-start justify-start gap-6">
           <h1 className="font-bold">Pay With</h1>
-          <img
+          <Image
             src="/payment.png"
             alt="surjopay"
             height={100}

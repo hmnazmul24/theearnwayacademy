@@ -10,22 +10,22 @@ const SuccessPayment = ({ params }: { params: { id: string } }) => {
 
   //   let data = false;
 
-  useEffect(() => {
-    let savePaidInfo = async () => {
-      try {
-        const { data } = await axios.get(
-          `/api/payment/success?id=${params.id}`
-        );
-        if (data.success) {
-          await axios.get("/api/student");
-          router.push("/course/paid");
-        }
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    savePaidInfo();
-  }, []);
+  // useEffect(() => {
+  //   let savePaidInfo = async () => {
+  //     try {
+  //       const { data } = await axios.get(
+  //         `/api/payment/success?id=${params.id}`
+  //       );
+  //       if (data.success) {
+  //         await axios.get("/api/student");
+  //         router.push("/course/paid");
+  //       }
+  //     } catch (error) {
+  //       console.log(error);
+  //     }
+  //   };
+  //   savePaidInfo();
+  // }, []);
   return (
     <div>
       <Loading text={"Saving your info...."} />
