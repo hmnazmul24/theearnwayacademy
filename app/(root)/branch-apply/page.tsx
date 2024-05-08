@@ -10,7 +10,6 @@ import { Button } from "@/components/ui/button";
 import { useThemeContext } from "@/context/theme";
 import { CreateBranch } from "@/lib/actions/branch.action";
 import { ApplicantInfo } from "@/types/interface";
-import axios from "axios";
 import { useRouter } from "next/navigation";
 import React, { Fragment, useEffect, useState } from "react";
 import toast from "react-hot-toast";
@@ -37,8 +36,8 @@ const BranchApply = () => {
       if (data?.error) {
         return toast.error(data.error);
       }
-      localStorage.setItem("branch_applicant", "applicant");
-      router.push("/branch-apply/pending");
+      localStorage.setItem("branch_applicant", data.id);
+      setApplied(true);
     } catch (error) {
       console.log("error -->", error);
     }

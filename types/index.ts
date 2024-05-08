@@ -62,4 +62,5 @@ export type BranchDocumentInfo = {
   personal_img: string;
   id_card_img: string;
   trade_licence_img: string;
+  bank_statement_img: string;
 };

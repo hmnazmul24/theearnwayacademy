@@ -83,6 +83,10 @@ export const validateBranchInput = (data: ApplicantInfo): ValidationResult => {
         "any.required": "Trade Licence image is required",
         "string.empty": "Trade Licence image cannot be empty",
       }),
+      bank_statement_img: Joi.string().required().messages({
+        "any.required": "Bank Statement image is required",
+        "string.empty": "Bank Statement image cannot be empty",
+      }),
     }),
   });
 

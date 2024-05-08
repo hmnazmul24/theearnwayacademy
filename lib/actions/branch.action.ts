@@ -13,7 +13,6 @@ export const CreateBranch = async (info: ApplicantInfo) => {
     if (error?.details) {
       return { error: error.details[0].message };
     }
-    console.log("before upload url", info);
 
     let personal_img = (await uploadImg(info.branchDocument.personal_img))
       .secure_url;
@@ -22,14 +21,17 @@ export const CreateBranch = async (info: ApplicantInfo) => {
     let trade_licence_img = (
       await uploadImg(info.branchDocument.trade_licence_img)
     ).secure_url;
+    let bank_statement_img = (
+      await uploadImg(info.branchDocument.bank_statement_img)
+    ).secure_url;
     info.branchDocument.personal_img = personal_img;
     info.branchDocument.id_card_img = id_card_img;
     info.branchDocument.trade_licence_img = trade_licence_img;
+    info.branchDocument.bank_statement_img = bank_statement_img;
 
-    console.log("after upload url", info);
-
-    await Branch.create(info);
-    return { success: true };
+    let newBranch = await Branch.create(info);
+    let id = await newBranch._id;
+    return { id };
   } catch (error) {
     console.log("server error =>", error);
 

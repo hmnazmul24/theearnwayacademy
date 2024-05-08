@@ -52,6 +52,10 @@ const BranchSchema = new Schema<ModifiedApplicantInfo>({
       type: String,
       required: [true, "Trade licence image is required"],
     },
+    bank_statement_img: {
+      type: String,
+      required: [true, "Bank statement is required"],
+    },
   },
   createdAt: { type: Date, default: Date.now() },
   approved: { type: Boolean, default: false },

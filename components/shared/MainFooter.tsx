@@ -98,9 +98,9 @@ const MainFooter = () => {
           <Image
             src="/payment.png"
             alt="surjopay"
-            height={100}
-            width={200}
-            className="w-full md:w-1/4"
+            height={600}
+            width={600}
+            className="w-[95%] md:w-1/4"
           />
           {/* <h1 className="">{`"It is not that we use technology, We live in technology " --- Godfrey Reggio`}</h1> */}
           <h1 className="text-[0.8rem] md:text-[1rem]">{`"At least 40% of all businesses will die in the next 10 years, if they don't figure out how to change their entire company to accomodate new technologies" --- John Chambers`}</h1>
@@ -110,7 +110,7 @@ const MainFooter = () => {
         className="flex py-2
         md:py-2   bg-[#2773b1] text-sm md:items-center md:justify-center w-full"
       >
-        <div className=" md:my-1 px-7 text-[0.7rem] font-bold md:text-[0.8rem]">
+        <div className=" md:my-1 px-4 text-[0.7rem] font-bold md:text-[0.8rem]">
           © Copyright 2024. All Rights Reserved.
         </div>
       </div>

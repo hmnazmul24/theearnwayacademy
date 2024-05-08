@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const Approve = () => {
   return (
-    <div className="min-h-screen bg-white relative rounded-md flex_center">
+    <div className="min-h-screen bg-white p-4 relative rounded-md flex_center">
       <div className="z-10">
         <h1 className="text-[#257d8d] text-[2rem] text-center bangla_font">
           উদ্যোক্তা হয়....

@@ -13,7 +13,7 @@ export const coursesInfo: coursesArrType[] = [
   {
     course: "Database Programming",
     code: "27DP",
-    image: "/courseImg/database.png",
+    image: "/courseImg/database.jpg",
   },
   {
     course: "Diploma in Computer Science",
@@ -33,7 +33,7 @@ export const coursesInfo: coursesArrType[] = [
   {
     course: "Web Design & Development",
     code: "08WD",
-    image: "/courseImg/webdev.jpeg",
+    image: "/courseImg/webdev.jpg",
   },
   {
     course: "Higher Diploma in Computer Science",

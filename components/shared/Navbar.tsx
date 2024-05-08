@@ -41,31 +41,40 @@ const Navbar = () => {
   //   getInfo();
   // }, [setMessage, setStudent]);
   return (
-    <div className="h-[70px] sticky top-0 left-0 z-50 md:h-[80px] main_bg_color border-b-[1px] border-b-[#1c95a7]">
-      <div className="w-[93%] md:w-[90%]  m-auto flex items-center justify-between h-full">
+    <div className="h-[75px]  sticky top-0 left-0 z-50 md:h-[80px] main_bg_color bg-[#1b5185] border-b-[1px] border-b-[#115560]">
+      <div className="w-[96%] md:w-[90%]  m-auto flex items-center justify-between h-full">
         <div className="h-full flex items-center relative justify-center gap-6">
           <Image
             src="/tew-logo.png"
             alt="main-logo"
             width={100}
             height={200}
-            className="h-[65%] md:h-[60%] main_logo"
+            className="h-[64%] md:h-[62%] main_logo"
             onClick={() => router.push("/", { scroll: false })}
           />
-          <span className="text-[0.7rem] font-bold  italic absolute bottom-[5px] m:bottom-[10px] w-[200px] left-[40px]">
+          <span
+            style={{ textShadow: "1px 1px black" }}
+            className="text-[0.7rem] font-bold italic absolute bottom-[5px] m:bottom-[10px] w-[200px] text-[#fac54a] underline-offset-1 shadow-sm  left-[44px]"
+          >
             The earn way academy
           </span>
         </div>
         <ul className="sm:flex font-bold items-center gap-6 text-[0.9rem] hidden ml-4">
           <Link href={"/"}>
-            <li className="">Home</li>
+            <li className="" style={{ textShadow: "1px 1px 6px aqua" }}>
+              Home
+            </li>
           </Link>
 
           <Link href={"#footer"}>
-            <li className="">Branch Login</li>
+            <li className="" style={{ textShadow: "1px 1px 6px aqua" }}>
+              Branch Login
+            </li>
           </Link>
           <Link href={"#footer"}>
-            <li className="">Contact Us</li>
+            <li className="" style={{ textShadow: "1px 1px 6px aqua" }}>
+              Contact Us
+            </li>
           </Link>
         </ul>
         {/* ham buger  */}
@@ -84,7 +93,7 @@ const Navbar = () => {
             <div className="flex items-center flex-col gap-2 p-[20px]">
               <DrawerClose>
                 <Button
-                  className="icon_bg rounded-[50px] "
+                  className="bg-[#000000] text-[white] rounded-[50px] "
                   onClick={() => router.push("/branch-login")}
                 >
                   Branch Login

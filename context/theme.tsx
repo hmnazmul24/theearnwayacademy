@@ -79,6 +79,7 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     id_card_img: "",
     personal_img: "",
     trade_licence_img: "",
+    bank_statement_img: "",
   });
   const ChangeBranchDocument = (value: string, name: string) => {
     setBranchDocument((pre) => ({ ...pre, [name]: value }));

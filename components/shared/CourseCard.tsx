@@ -9,8 +9,8 @@ const CourseCard = ({ item }: { item: coursesArrType }) => {
         src={item.image!}
         className=" rounded-sm w-full"
         alt="office "
-        height={250}
-        width={400}
+        height={500}
+        width={1000}
       />
       <div
         className="absolute bottom-0 w-full h-[80px] rounded-md "
