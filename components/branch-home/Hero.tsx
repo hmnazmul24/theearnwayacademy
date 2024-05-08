@@ -16,12 +16,7 @@ const Hero = () => {
       >
         <div className="h-[70px] w-full flex items-center justify-end md:hidden bg-[#ff000086]">
           <ul className="  flex items-start md:justify-end mr-2 gap-2 ">
-            <Link
-              href={
-                "https://www.tiktok.com/@the.earn.way.acad?_t=8i0ujqgKcRV&_r=1"
-              }
-              target="_blank"
-            >
+            <Link href={"https://wa.me/message/JL3ZRGMBGJMRK1"} target="_blank">
               <li className="bg-green-700 cursor-pointer rounded-full p-2 icon_color">
                 <RiPhoneLine className="text-[white]" />
               </li>

@@ -66,6 +66,7 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
   const [moreBranchInfo, setMoreBranchInfo] = useState<MoreBranchInfoType>({
     address: "",
     district: "",
+    divition: "",
     mobile: "",
     name: "",
     postcode: "",

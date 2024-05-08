@@ -4,6 +4,7 @@ import BranchInput from "./BranchInput";
 import { useThemeContext } from "@/context/theme";
 import BranchSelectInput from "./BranchSelectInput";
 import { BDDistric } from "@/lib/arrayInfo/bd_state_info";
+import Divition from "./Divition";
 
 const MoreInfo = () => {
   const { ChangeMoreBranchInfo, moreBranchInfo } = useThemeContext();
@@ -23,6 +24,7 @@ const MoreInfo = () => {
           name="mobile"
           placeholder="Additional Mobile Number"
         />
+        <Divition />
         <BranchSelectInput name="district" />
         <BranchSelectInput name="upozila" />
         <BranchInput

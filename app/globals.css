@@ -139,3 +139,6 @@ input[type="number"]::-webkit-outer-spin-button {
 .branchInfoGredientBg {
   background-image: linear-gradient(#78d5f4, white);
 }
+.heroImageBorderBottom {
+  background-image: linear-gradient(#78d5f4, white);
+}
