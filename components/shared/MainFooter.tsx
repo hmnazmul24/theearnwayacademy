@@ -60,15 +60,16 @@ const MainFooter = () => {
                 </span>
                 <span>01880110842</span>
               </li>
-              <li
-                className="my-2 flex justify-start items-center cursor-pointer"
-                onClick={() => window.open("tel:01880110842", "_self")}
+              <Link
+                href={"https://www.facebook.com/the.earn.way?mibextid=ZbWKwL"}
               >
-                <span className="mr-2">
-                  <FaFacebook className="text-[white]" />
-                </span>
-                <span>Our Facebook Page</span>
-              </li>
+                <li>
+                  <span className="mr-2">
+                    <FaFacebook className="text-[white]" />
+                  </span>
+                  <span>Our Facebook Page</span>
+                </li>
+              </Link>
             </ul>
           </div>
           <div className="w-full sm:w-1/2 md:w-1/4">
