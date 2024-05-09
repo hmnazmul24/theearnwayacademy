@@ -43,7 +43,7 @@ const MainFooter = () => {
             <ul className="">
               <li className=" flex_center text-[0.9rem] justify-start">
                 <span className="mr-2">
-                  <FaLocationDot className="text-[white]" />
+                  <FaLocationDot className="text-[black]" />
                 </span>
                 <span>
                   Sohidul Islam Market, 2nd floor,
@@ -56,18 +56,18 @@ const MainFooter = () => {
                 onClick={() => window.open("tel:01880110842", "_self")}
               >
                 <span className="mr-2">
-                  <FaPhone className="text-[white]" />
+                  <FaPhone className="text-[black]" />
                 </span>
                 <span>01880110842</span>
               </li>
               <Link
                 href={"https://www.facebook.com/the.earn.way?mibextid=ZbWKwL"}
               >
-                <li>
+                <li className="my-2 flex justify-start items-center cursor-pointer">
                   <span className="mr-2">
-                    <FaFacebook className="text-[white]" />
+                    <FaFacebook className="text-[#000000]" />
                   </span>
-                  <span>Our Facebook Page</span>
+                  <span>facebook page</span>
                 </li>
               </Link>
             </ul>
