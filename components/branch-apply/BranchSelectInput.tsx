@@ -7,11 +7,22 @@ import {
   SelectValue,
 } from "../ui/select";
 import { useThemeContext } from "@/context/theme";
-import { BDDistric, BDUpozila } from "@/lib/arrayInfo/bd_state_info";
+import {
+  BDDistric,
+  BDDivition,
+  BDUpozila,
+} from "@/lib/arrayInfo/bd_state_info";
 
-type upozila = {
+type UpozilaType = {
   id: string;
   district_id: string;
+  name: string;
+  bn_name: string;
+  url: string;
+};
+type DistrictType = {
+  id: string;
+  division_id: string;
   name: string;
   bn_name: string;
   url: string;
@@ -19,9 +30,19 @@ type upozila = {
 
 const BranchSelectInput = ({ name }: { name: string }) => {
   const { ChangeMoreBranchInfo, moreBranchInfo } = useThemeContext();
-  const [upozila, setUpozila] = useState<upozila[]>([]);
+  const [district, setDistrict] = useState<DistrictType[]>([]);
+  const [upozila, setUpozila] = useState<UpozilaType[]>([]);
 
   useEffect(() => {
+    if (moreBranchInfo.division) {
+      let sdivition = BDDivition.filter(
+        (item) => item.name === moreBranchInfo.division
+      );
+      let ds = BDDistric.filter(
+        (item) => item.division_id === sdivition![0].id
+      );
+      setDistrict(ds);
+    }
     if (moreBranchInfo.district) {
       let sdistric = BDDistric.filter(
         (item) => item.name === moreBranchInfo.district
@@ -29,7 +50,7 @@ const BranchSelectInput = ({ name }: { name: string }) => {
       let up = BDUpozila.filter((item) => item.district_id === sdistric![0].id);
       setUpozila(up);
     }
-  }, [moreBranchInfo]);
+  }, [moreBranchInfo.division, moreBranchInfo.district]);
 
   return (
     <div>
@@ -43,11 +64,13 @@ const BranchSelectInput = ({ name }: { name: string }) => {
             <SelectValue placeholder="District" className="placeholder:pl-2" />
           </SelectTrigger>
           <SelectContent className="bg-[white]">
-            {BDDistric.map((item) => (
-              <SelectItem key={item.id} value={item.name}>
-                {item.name}- <span className="bangla_font">{item.bn_name}</span>
-              </SelectItem>
-            ))}
+            {moreBranchInfo.division &&
+              district.map((item) => (
+                <SelectItem key={item.id} value={item.name}>
+                  {item.name}-{" "}
+                  <span className="bangla_font">{item.bn_name}</span>
+                </SelectItem>
+              ))}
           </SelectContent>
         </Select>
       ) : (
@@ -56,11 +79,13 @@ const BranchSelectInput = ({ name }: { name: string }) => {
             <SelectValue placeholder="Upozila" className="placeholder:pl-2" />
           </SelectTrigger>
           <SelectContent className="bg-[white]">
-            {upozila?.map((item) => (
-              <SelectItem key={item.id} value={item.name}>
-                {item.name}- <span className="bangla_font">{item.bn_name}</span>
-              </SelectItem>
-            ))}
+            {moreBranchInfo.district &&
+              upozila?.map((item) => (
+                <SelectItem key={item.id} value={item.name}>
+                  {item.name}-{" "}
+                  <span className="bangla_font">{item.bn_name}</span>
+                </SelectItem>
+              ))}
           </SelectContent>
         </Select>
       )}

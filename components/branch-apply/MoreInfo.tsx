@@ -24,6 +24,9 @@ const MoreInfo = () => {
           name="mobile"
           placeholder="Additional Mobile Number"
         />
+        <h1 className="m-2 font-bold text-[0.8rem] ">
+          *** Select division, then district, then upazila.
+        </h1>
         <Divition />
         <BranchSelectInput name="district" />
         <BranchSelectInput name="upozila" />

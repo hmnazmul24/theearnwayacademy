@@ -7,10 +7,12 @@ import {
   SelectValue,
 } from "../ui/select";
 import { BDDivition } from "@/lib/arrayInfo/bd_state_info";
+import { useThemeContext } from "@/context/theme";
 
 const Divition = () => {
+  const { ChangeMoreBranchInfo } = useThemeContext();
   return (
-    <Select>
+    <Select onValueChange={(e) => ChangeMoreBranchInfo(e, "division")}>
       <SelectTrigger className="bg-white py-6 px-4 border-[1px] border-[#00718023]">
         <SelectValue placeholder="Divition" className="placeholder:pl-2" />
       </SelectTrigger>

@@ -53,7 +53,7 @@ export type BranchPersonInfoType = {
 export type MoreBranchInfoType = {
   name: string;
   mobile: string;
-  divition: string;
+  division: string;
   district: string;
   upozila: string;
   address: string;

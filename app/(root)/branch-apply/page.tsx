@@ -36,7 +36,7 @@ const BranchApply = () => {
       if (data?.error) {
         return toast.error(data.error);
       }
-      localStorage.setItem("branch_applicant", data.id);
+      localStorage.setItem("branch_applicant", data.id!);
       setApplied(true);
     } catch (error) {
       console.log("error -->", error);

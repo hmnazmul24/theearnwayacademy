@@ -7,7 +7,7 @@ import { TbBrandYoutube } from "react-icons/tb";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { RiTiktokLine } from "react-icons/ri";
 import { AiOutlineLogin } from "react-icons/ai";
-import { FaChevronDown } from "react-icons/fa6";
+import { FaChevronDown, FaMicrophoneLines, FaPhone } from "react-icons/fa6";
 import {
   Drawer,
   DrawerClose,
@@ -61,101 +61,89 @@ const Navbar = () => {
         </div>
         <ul className="sm:flex font-bold items-center gap-6 text-[0.9rem] hidden ml-4">
           <Link href={"/"}>
-            <li className="" style={{ textShadow: "1px 1px 6px aqua" }}>
+            <li
+              className="hover:text-[#efefef]  transition-all"
+              style={{ textShadow: "1px 1px 6px aqua" }}
+            >
               Home
             </li>
           </Link>
 
           <Link href={"#footer"}>
-            <li className="" style={{ textShadow: "1px 1px 6px aqua" }}>
+            <li
+              className="hover:text-[#dedede] transition-all"
+              style={{ textShadow: "1px 1px 6px aqua" }}
+            >
               Branch Login
             </li>
           </Link>
           <Link href={"#footer"}>
-            <li className="" style={{ textShadow: "1px 1px 6px aqua" }}>
+            <li
+              className="hover:text-[#dcdcdc] transition-all"
+              style={{ textShadow: "1px 1px 6px aqua" }}
+            >
               Contact Us
             </li>
           </Link>
         </ul>
-        {/* ham buger  */}
-        <Drawer>
-          <DrawerTrigger
-            className="sm:hidden  rounded-full text-[#ffad32] translate-x-1 p-2 "
-            style={{ filter: "drop-shadow(1px 1px 1px black)" }}
-          >
-            <RxHamburgerMenu className=" text-[1.7rem]" />
-          </DrawerTrigger>
-          <DrawerContent className="main_bg_color outline-none border-none rounded-[0]">
-            <DrawerHeader>
-              <DrawerTitle>The earn way cademy</DrawerTitle>
-            </DrawerHeader>
-
-            <div className="flex items-center flex-col gap-2 p-[20px]">
-              <DrawerClose>
-                <Button
-                  className="bg-[#000000] text-[white] rounded-[50px] "
-                  onClick={() => router.push("/branch-login")}
-                >
-                  Branch Login
-                </Button>
-              </DrawerClose>
-              <DrawerClose>
-                <Button
-                  onClick={() => {
-                    setTimeout(() => {
-                      window.scrollTo({
-                        top: document.documentElement.scrollHeight,
-                        behavior: "smooth",
-                      });
-                    }, 2000);
-                  }}
-                  className=" rounded-[50px] "
-                >
-                  Contact Us
-                </Button>
-              </DrawerClose>
-            </div>
-
-            <DrawerFooter>
-              <DrawerClose>
-                <Button className="w-full rounded-[50px] text-[#1b1b1b]">
-                  <FaChevronDown className="text-[1.3rem]" />
-                </Button>
-              </DrawerClose>
-            </DrawerFooter>
-          </DrawerContent>
-        </Drawer>
-
-        {/* ham icon  */}
-        <div className=" items-center justify-center hidden sm:flex">
-          <ul className="md:flex items-center justify-center gap-3 mr-2 hidden">
-            <Link
-              href={"https://www.facebook.com/the.earn.way?mibextid=ZbWKwL"}
-              target="_blank"
+        <div className="flex_center gap-3">
+          <div className="flex_center">
+            <button
+              className="h-[40px] flex_center w-[40px] rounded-full bg-[#00365a] md:bg-transparent"
+              onClick={() => window.open("tel:01880110842", "_self")}
             >
-              <li className="icon_bg cursor-pointer  rounded-full p-2 icon_color">
-                <TbBrandFacebook />
-              </li>
-            </Link>
-            <Link
-              href={"https://www.youtube.com/@TheEarnWayAcademy"}
-              target="_blank"
-            >
-              <li className="icon_bg cursor-pointer rounded-full p-2 icon_color">
-                <TbBrandYoutube />
-              </li>
-            </Link>
-            <Link
-              href={
-                "https://www.tiktok.com/@the.earn.way.acad?_t=8i0ujqgKcRV&_r=1"
-              }
-              target="_blank"
-            >
-              <li className="icon_bg cursor-pointer rounded-full p-2 icon_color">
-                <RiTiktokLine />
-              </li>
-            </Link>
-          </ul>
+              <FaPhone className="text-[#ffa515] " />
+            </button>
+            <span className="font-bold hidden md:block text-[#dddddd] tracking-[0.5px]">
+              01880110842
+            </span>
+          </div>
+          {/* ham buger  */}
+          <Drawer>
+            <DrawerTrigger className="sm:hidden  h-[40px]  w-[40px] rounded-full bg-[#00365a] p-2 ">
+              <RxHamburgerMenu className=" text-[1.4rem] text-[#ffa81c]" />
+            </DrawerTrigger>
+            <DrawerContent className="main_bg_color outline-none border-none rounded-[0]">
+              <DrawerHeader>
+                <DrawerTitle>The earn way cademy</DrawerTitle>
+              </DrawerHeader>
+
+              <div className="flex items-center flex-col gap-2 p-[20px]">
+                <DrawerClose>
+                  <Button
+                    className="bg-[#000000] text-[white] rounded-[50px] "
+                    onClick={() => router.push("/branch-login")}
+                  >
+                    Branch Login
+                  </Button>
+                </DrawerClose>
+                <DrawerClose>
+                  <Button
+                    onClick={() => {
+                      setTimeout(() => {
+                        window.scrollTo({
+                          top: document.documentElement.scrollHeight,
+                          behavior: "smooth",
+                        });
+                      }, 2000);
+                    }}
+                    className=" rounded-[50px] "
+                  >
+                    Contact Us
+                  </Button>
+                </DrawerClose>
+              </div>
+
+              <DrawerFooter>
+                <DrawerClose>
+                  <Button className="w-full rounded-[50px] text-[#1b1b1b]">
+                    <FaChevronDown className="text-[1.3rem]" />
+                  </Button>
+                </DrawerClose>
+              </DrawerFooter>
+            </DrawerContent>
+          </Drawer>
+          {/* ham icon  */}
         </div>
       </div>
     </div>

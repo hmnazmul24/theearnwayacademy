@@ -53,6 +53,10 @@ export const validateBranchInput = (data: ApplicantInfo): ValidationResult => {
         "any.required": "Mobile number is required",
         "string.empty": "Mobile number cannot be empty",
       }),
+      division: Joi.string().required().messages({
+        "any.required": "Divition is required",
+        "string.empty": "Divition field cannot be empty",
+      }),
       district: Joi.string().required().messages({
         "any.required": "District is required",
         "string.empty": "District field cannot be empty",

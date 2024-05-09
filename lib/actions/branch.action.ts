@@ -1,7 +1,7 @@
 "use server";
 
 import connect_db from "../database/db";
-import { ApplicantInfo } from "@/types/interface";
+import { ApplicantInfo, SuccessApplicantInfoType } from "@/types/interface";
 import { validateBranchInput } from "../middlewares/validate-branch";
 import { uploadImg } from "../middlewares/uploadImg";
 import Branch from "../database/modals/branch.model";
@@ -29,8 +29,8 @@ export const CreateBranch = async (info: ApplicantInfo) => {
     info.branchDocument.trade_licence_img = trade_licence_img;
     info.branchDocument.bank_statement_img = bank_statement_img;
 
-    let newBranch = await Branch.create(info);
-    let id = await newBranch._id;
+    let newBranch: SuccessApplicantInfoType = await Branch.create(info);
+    let id = newBranch._id;
     return { id };
   } catch (error) {
     console.log("server error =>", error);

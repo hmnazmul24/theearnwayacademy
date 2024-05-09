@@ -34,6 +34,7 @@ const BranchSchema = new Schema<ModifiedApplicantInfo>({
   moreBranchInfo: {
     name: { type: String, required: [true, "Name is required"] },
     mobile: { type: String, required: [true, "Mobile number is required"] },
+    division: { type: String, required: [true, "Divition is required"] },
     district: { type: String, required: [true, "District is required"] },
     upozila: { type: String, required: [true, "Upozila is required"] },
     address: { type: String, required: [true, "Address is required"] },
