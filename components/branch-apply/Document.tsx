@@ -10,7 +10,7 @@ const Document = () => {
         <ImgUpload title="2. Trade Licence" name="personal_img" />
         <ImgUpload title="3. NID Card Photo" name="trade_licence_img" />
         <ImgUpload
-          title="3. Bank Statement Picture"
+          title="3. Payment Statement Picture"
           name="bank_statement_img"
         />
       </div>
