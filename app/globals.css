@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@100..800&family=Quicksand:wght@300..700&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Titan+One&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -11,6 +11,15 @@
 
 .bangla_font {
   font-family: "Anek Bangla", sans-serif !important;
+}
+.dashboard_font {
+  font-family: "Quicksand", sans-serif !important;
+}
+.dashboard_logo {
+  font-family: "Titan One", sans-serif;
+  text-shadow: 1px 1px 1px black;
+  color: rgb(211, 144, 0);
+  font-size: 1.3rem;
 }
 
 @layer base {
@@ -95,6 +104,9 @@ input[type="number"]::-webkit-outer-spin-button {
 /* custom css class  */
 
 @layer base {
+  .b_1 {
+    @apply border-[1px] border-[#133b51];
+  }
   .main_border {
     @apply border-[1px] border-[#172e6f];
   }
@@ -124,6 +136,14 @@ input[type="number"]::-webkit-outer-spin-button {
   @apply font-bold my-2 p-2 text-[#154557];
 }
 
+.page_box {
+  @apply m-2 p-2 md:p-4 md:m-4  bg-white drop-shadow-sm;
+}
+
+.d_heading {
+  @apply p-3 font-bold text-[1.2rem];
+}
+
 #hero_box {
   background-image: linear-gradient(#2792b5, white);
 }
@@ -142,4 +162,23 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 .heroImageBorderBottom {
   background-image: linear-gradient(#78d5f4, white);
+}
+
+/* dashboard color  */
+
+.d_bg_main {
+  @apply bg-[#1c78a6];
+}
+.d_btn_bg {
+  @apply text-[#1d536f];
+}
+.logo_color {
+  @apply text-[#c78d31];
+}
+
+/* dashboard color  */
+
+/* loginpagecolor */
+.loginPage {
+  background-image: linear-gradient(#44b1ff8c, white, #44b1ff8c);
 }

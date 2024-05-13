@@ -29,11 +29,9 @@ const MainFooter = () => {
                 <Link href={"/"}>Home</Link>
               </li>
               <li>Contact</li>
+              <li>{/* <Link href={"/branch-login"}>Branch Login</Link> */}</li>
               <li>
-                <Link href={"/branch-login"}>Branch Login</Link>
-              </li>
-              <li>
-                <Link href={"/courses"}>Online Courese</Link>
+                <Link href={"/"}>Online Courese</Link>
               </li>
             </ul>
           </div>

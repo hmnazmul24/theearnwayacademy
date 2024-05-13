@@ -26,16 +26,16 @@ const Hero = () => {
             The Earn Way Academy
           </span>
           <br className="lg:hidden  bangla_font" />
-          প্রদান করছে কম্পিউটার প্রশিক্ষণ কেন্দ্র খোলার অনুমতি
+          {/* প্রদান করছে কম্পিউটার প্রশিক্ষণ কেন্দ্র খোলার অনুমতি */}
         </div>
         <div className="flex items-center flex-col justify-center">
-          <Link href={"/branch-apply"}>
+          <Link href={"#footer"}>
             {" "}
             <Button
               variant={"outline"}
               className="bg-[black] mt-5 hover:bg-[#207485] text-[white] shadow-md transition-all"
             >
-              Apply Branch <BiLogInCircle className="ml-2" />
+              Contact Us
             </Button>
           </Link>
         </div>

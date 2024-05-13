@@ -17,9 +17,9 @@ const Home = () => {
       <div className="md:w-[90%]  md:p-0 md:my-3 m-auto w-full">
         <Courses />
       </div>
-      <div className="md:w-[90%]  md:p-0 md:my-3 m-auto w-full">
+      {/* <div className="md:w-[90%]  md:p-0 md:my-3 m-auto w-full">
         <Approve />
-      </div>
+      </div> */}
     </>
   );
 };

@@ -25,7 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <link rel="icon" href="/icon/tew-fav.png" sizes="any" />
+      <link rel="icon" href="/favicon.ico" sizes="any" />
       <body
         className={cn(
           "min-h-screen bg-background text-custom-color  font-sans antialiased",
