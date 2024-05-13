@@ -73,7 +73,7 @@ const BranchNavLists = ({
             }`}
           >
             {item.items.map((info) => (
-              <Link href={info.link}>
+              <Link href={info.link} key={info.title}>
                 <li
                   key={info.link}
                   className="py-[13px] border-b-[#0b3245] border-b-[1px]"
