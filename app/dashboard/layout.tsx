@@ -1,37 +1,9 @@
 "use client";
 
-import BranchNavbar from "@/components/branch-dashboard/BranchNavbar";
-
-import { useEffect, useState } from "react";
-import BranchSidebar from "@/components/branch-dashboard/BranchSidebar";
-import DashboardNav from "@/components/dashboard/DashboardNav";
-import DashboarSidebar from "@/components/dashboard/DashboardSidebar";
-
 export default function BranchDashboardLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const [open, setOpen] = useState<boolean>(false);
-  const [desktopNavOpen, setDesktopNavOpen] = useState<boolean>(false);
-  const close = () => {
-    setOpen(!open);
-  };
-  const DeskTopNavClose = () => {
-    setDesktopNavOpen(!desktopNavOpen);
-  };
-  return (
-    <div className="bg-slate-100 min-h-screen">
-      <DashboardNav close={close} desktopNavOpen={desktopNavOpen} />
-
-      <DashboarSidebar
-        open={open}
-        desktopNavOpen={desktopNavOpen}
-        DeskTopNavClose={DeskTopNavClose}
-      />
-      <div className={`${desktopNavOpen ? "lg:pl-[50px]" : "lg:pl-[250px]"} `}>
-        {children}
-      </div>
-    </div>
-  );
+  return <div className="bg-slate-100 min-h-screen">{children}</div>;
 }
