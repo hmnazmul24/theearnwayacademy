@@ -44,7 +44,7 @@ const BranchNavLists = ({
   return (
     <div className="pt-2">
       {branchNavItemsArr.map((item, i) => (
-        <div key={item.title} className="min-w-[250px]">
+        <div key={i} className="min-w-[250px]">
           <h1
             className={`flex px-4 py-3 ${
               item.title === selectItem && "text-[#3ce2ff]"
@@ -72,8 +72,8 @@ const BranchNavLists = ({
               open && selectItem === item.title ? item.h : "h-[0px]"
             }`}
           >
-            {item.items.map((info) => (
-              <Link href={info.link} key={info.title}>
+            {item.items.map((info, index) => (
+              <Link href={info.link} key={index}>
                 <li
                   key={info.link}
                   className="py-[13px] border-b-[#0b3245] border-b-[1px]"
